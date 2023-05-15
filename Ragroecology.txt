@@ -1,0 +1,68 @@
+Faune<-read.csv("Classeur1.csv",r=1,dec = ",",sep = ";",header = T,stringsAsFactors = T)
+summary(Faune)
+pairwise.t.test(Faune$Ind.Square,Faune$Ind.Weight)
+summary.aov(Faune$Treatment~Faune$Ind.Square)
+kruskal.test(Faune$Treatment~Faune$Ind.Square)
+boxplot(Faune$Ind.Square~Faune$Treatment,col="green")
+summary(Macrofauna;global)
+summary(Macrofaune.global)
+summary(Macrofauna.global)
+hist(Macrofauna.global$Sample~Macrofauna.global$Total.Individues)
+hist(Macrofauna.global$Sample~Macrofauna.global$Total.Individues)
+hist(Macrofauna.global$~Macrofauna.global$Total.Individues)
+hist(Macrofauna.global$Total.Individues~Macrofauna.global$Sample)
+hist(Macrofauna.global$Morpho.Type~Macrofauna.global$Sample)
+barplot(Macrofauna.global$Morpho.Type~Macrofauna.global$Sample)
+library(ggplot2)
+hist(Macrofauna.global$Sample~Macrofauna.global$Total.Individues)
+barplot(Macrofauna.global)
+x<-(Macrofauna.global$Sample~Macrofauna.global$Morpho.Type)
+hist(x)
+barplot(Macrofauna.global$Morpho.Type,Macrofauna.global$Sample)
+ggplot(Macrofauna.global,aes(x=Sample))+geom_histogram(binwidth=1)
+ggplot(Macrofauna.global,aes(x=Sample))+geom_histogram(binwidth=1)
+library(esquisse)
+ggplot(Macrofauna.global,aes(x=Sample))+geom_histogram(binwidth=1)
+ggplot(Macrofauna.global,aes(x=Sample))+geom_histogram(binwidth=0.5)                                                    
+plot(Macrofauna.global$Sample,Macrofauna.global$Morpho.Type)
+barplot(Macrofauna.global$Sample,Macrofauna.global$Morpho.Type)
+barplot(Macrofauna.global$Treatment,Macrofauna.global$Morpho.Type)
+ggplot(Macrofauna.global,aes(x=Sample))+geom_histogram(binwidth=0.5)
+library(doBy)
+s1<-summaryBy(Number.of.Individuals~Sample+Morpho.Type,FUN = sum,data=Macrofauna.global)
+
+MERCI<-read.csv("CoverCrop_CoverRate_Biomass_2023.csv",dec = ",",sep = ";",header = T,stringsAsFactors = T)
+summary(Faune)
+MERCI$potentialReturn_N<-as.numeric(MERCI$potentialReturn_N)
+
+N<-summaryBy(TOTAL_N~treatment+code_plot,FUN=sum,data=MERCI,NA.rm=T)
+N
+N<-N[-1,]
+
+N<-MERCI[MERCI$species=="total_vegetation",]
+N$treatment<-as.character(N$treatment)
+
+
+
+m<-aov(TOTAL_N~treatment,data=N)
+summary(m)
+
+boxplot(TOTAL_N~treatment,data=N)
+levels(MERCI$treatment)
+
+
+m<-aov(potentialReturn_N~treatment,data=N)
+summary(m)
+
+boxplot(potentialReturn_N~treatment,data=N,xlab="treatments",ylab = "potential return N")
+levels(MERCI$treatment)
+MERCI<-read.csv("CoverCrop_CoverRate_Biomass_2023.csv",dec = ",",sep = ";",header = T,stringsAsFactors = T)
+summary(MERCI)
+str(MERCI)
+M<-summaryBy(Number.of.Individuals~Sample+Morpho.Type,FUN = sum,data=Macrofauna.global)
+str(M)
+MG<-read.csv("Macrofauna global.csv",dec = ",",sep = ";",header = T,stringsAsFactors = T)
+M<-summaryBy(Number.of.Individuals~Treatment,FUN = sum,data=Macrofauna.global)
+> M
+barplot(M$Number.of.Individuals.sum,names.arg=M$Treatment)
+Faune<-read.csv("Anova test.csv",r=1,dec = ",",sep = ";",header = T,stringsAsFactors = T)
